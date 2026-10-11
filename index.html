@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chilso Jewelers</title>
+</head>
+<body>
+  <style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+    background: brown;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 6%;
+    gap: 20px;
+}
+
+.logo {
+    font-family: Georgia, serif;
+    font-style: italic;
+    color: #0000ff;
+    font-size: 28px;
+}
+
+.search {
+    display: flex;
+    width: 35%;
+    height: 35px;
+}
+
+.search input {
+    width: 100%;
+    min-width: 0;
+    border: 1px solid orangered;
+    padding: 8px;
+    outline: none;
+}
+
+.search button {
+    width: 42px;
+    border: none;
+    background: #000000;
+    color: aquamarine;
+    cursor: pointer;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+}
+
+.header-icons i {
+    color: darkcyan;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    background: grey;
+    padding: 12px 5%;
+    color: black;
+    font-size: 11px;
+}
+
+nav a:hover {
+    color: #222;
+}
+
+.hero {
+    min-height: 350px;
+    background: #101014;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    color: black;
+    padding: 0 6%;
+}
+
+.hero-content {
+    width: 45%;
+    padding: 45px 0;
+}
+
+.hero-content h1 {
+    font-size: 30px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+}
+
+.hero-content p {
+    font-size: 13px;
+    color: #ccc;
+    margin-bottom: 25px;
+    max-width: 420px;
+}
+
+.hero-image {
+    width: 48%;
+    height: 350px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.btn {
+    display: inline-block;
+    background: #408d90;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #28686b;
+    transform: translateY(-2px);
+}
+
+.section {
+    padding: 55px 6%;
+}
+
+.section > h2 {
+    text-align: center;
+    font-size: 25px;
+    margin-bottom: 28px;
+}
+
+.products {
+    background: #fff;
+}
+
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.product-card {
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    font-size: 14px;
+    margin: 12px 0 5px;
+}
+
+.product-card p {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.product-card .btn {
+    padding: 7px 18px;
+}
+
+.about {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    background: #fafafa;
+}
+
+.about-images {
+    width: 48%;
+    position: relative;
+    padding: 0 30px 20px 0;
+}
+
+.about-images > img:first-child {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+}
+
+.about-images .small-image {
+    position: absolute;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    right: 0;
+    bottom: 0;
+    border: 7px solid #fafafa;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2,
+.why-content h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.about-content p,
+.why-content p {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.bestseller {
+    background: linear-gradient(120deg, #73a8a7, #397d80);
+    color: white;
+}
+
+.seller-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.seller-card {
+    background: white;
+    color: #222;
+    padding: 7px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.seller-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.seller-card h3 {
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.seller-card p {
+    color: #777;
+    font-size: 11px;
+    margin: 5px 0;
+}
+
+.seller-card strong {
+    display: block;
+    color: #408d90;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.why {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+}
+
+.why-content {
+    flex: 1;
+}
+
+.why-image {
+    width: 45%;
+    padding: 12px;
+    border-top: 7px solid #408d90;
+    border-right: 7px solid #408d90;
+}
+
+.why-image img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+}
+
+.testimonials {
+    background: #fafafa;
+}
+
+.testimonial-container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.testimonial-card {
+    background: white;
+    border: 2px solid #408d90;
+    border-radius: 45px 5px 45px 5px;
+    padding: 25px;
+    box-shadow: 0 4px 15px #0000000a;
+}
+
+.client {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.client img {
+    width: 55px;
+    height: 55px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.client h3 {
+    font-size: 13px;
+}
+
+.client span {
+    color: #e9b83f;
+    font-size: 13px;
+}
+
+.testimonial-card > p {
+    color: #666;
+    font-size: 12px;
+}
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, 130px);
+    gap: 8px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.gallery-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-container img:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.gallery-container img:nth-child(2) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.gallery-container img:nth-child(3) {
+    grid-column: 3;
+    grid-row: 1 / 3;
+}
+
+.gallery-container img:nth-child(4) {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.gallery-container img:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2 / 4;
+}
+
+.gallery-container img:nth-child(6) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.gallery-container img:nth-child(7) {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+.gallery-container img:nth-child(8) {
+    display: none;
+}
+
+.newsletter {
+    background: linear-gradient(#397c80c9, #397c80c9),
+    url("https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80") center/cover;
+    color: white;
+    text-align: center;
+    padding: 55px 6%;
+}
+
+.newsletter h2 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+.newsletter p {
+    font-size: 13px;
+    max-width: 600px;
+    margin: 0 auto 20px;
+}
+
+.newsletter form {
+    display: flex;
+    max-width: 500px;
+    margin: auto;
+}
+
+.newsletter input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    border: none;
+    outline: none;
+}
+
+.newsletter button {
+    border: none;
+    background: white;
+    color: #397c80;
+    padding: 0 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+footer {
+    padding: 45px 6% 15px;
+    background: #fff;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr 1.3fr;
+    gap: 30px;
+}
+
+.footer-brand h2 {
+    font-family: Georgia, serif;
+    font-style: italic;
+    font-size: 30px;
+    color: #408d90;
+    margin-bottom: 10px;
+}
+
+.footer-brand p {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+}
+
+.socials a {
+    background: #408d90;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+.footer-links h3 {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.footer-links > a {
+    display: block;
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 7px;
+}
+
+.footer-links p {
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 10px;
+    overflow-wrap: anywhere;
+}
+
+.footer-links p i {
+    color: #408d90;
+    margin-right: 5px;
+}
+
+.copyright {
+    border-top: 1px solid #ddd;
+    margin-top: 30px;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .top-header {
+        padding: 12px 4%;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 21px;
+    }
+
+    .search {
+        width: 42%;
+    }
+
+    .header-icons {
+        gap: 8px;
+    }
+
+    .header-icons span {
+        display: none;
+    }
+
+    nav {
+        gap: 12px;
+        padding: 12px 3%;
+        font-size: 10px;
+    }
+
+    .hero {
+        min-height: 250px;
+        padding: 0 5%;
+    }
+
+    .hero-content {
+        width: 50%;
+        padding: 25px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 21px;
+    }
+
+    .hero-content p {
+        font-size: 11px;
+    }
+
+    .hero-image {
+        width: 48%;
+        height: 250px;
+    }
+
+    .section {
+        padding: 35px 5%;
+    }
+
+    .section > h2 {
+        font-size: 21px;
+    }
+
+    .product-container,
+    .seller-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 12px;
+    }
+
+    .product-card img {
+        height: 150px;
+    }
+
+    .seller-card img {
+        height: 200px;
+    }
+
+    .about,
+    .why {
+        gap: 25px;
+    }
+
+    .about-content h2,
+    .why-content h2 {
+        font-size: 20px;
+    }
+
+    .about-images > img:first-child,
+    .why-image img {
+        height: 270px;
+    }
+
+    .about-images .small-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gallery-container {
+        grid-template-rows: repeat(3, 100px);
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .footer-brand {
+        grid-column: span 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .top-header {
+        flex-wrap: wrap;
+        padding: 10px 4%;
+    }
+
+    .logo {
+        font-size: 23px;
+    }
+
+    .search {
+        order: 3;
+        width: 100%;
+    }
+
+    .header-icons {
+        margin-left: auto;
+    }
+
+    nav {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        text-align: center;
+        gap: 12px 5px;
+        font-size: 9px;
+    }
+
+    .hero {
+        min-height: 220px;
+        padding: 0 4%;
+    }
+
+    .hero-content {
+        width: 53%;
+        padding: 20px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 17px;
+        margin-bottom: 10px;
+    }
+
+    .hero-content p {
+        font-size: 10px;
+        line-height: 1.5;
+        margin-bottom: 12px;
+    }
+
+    .hero-content .btn {
+        padding: 8px 14px;
+        font-size: 9px;
+    }
+
+    .hero-image {
+        width: 45%;
+        height: 220px;
+    }
+
+    .section {
+        padding: 30px 4%;
+    }
+
+    .section > h2 {
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+
+    .product-container,
+    .seller-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 10px;
+    }
+
+    .product-card img {
+        height: 115px;
+    }
+
+    .product-card h3 {
+        font-size: 11px;
+    }
+
+    .product-card p {
+        font-size: 10px;
+    }
+
+    .product-card .btn {
+        padding: 7px 12px;
+        font-size: 9px;
+    }
+
+    .about,
+    .why {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .about-images,
+    .about-content,
+    .why-content,
+    .why-image {
+        width: 100%;
+    }
+
+    .about-images {
+        padding-right: 20px;
+    }
+
+    .about-images > img:first-child {
+        height: 230px;
+    }
+
+    .about-images .small-image {
+        width: 95px;
+        height: 95px;
+    }
+
+    .about-content h2,
+    .why-content h2 {
+        font-size: 19px;
+    }
+
+    .about-content p,
+    .why-content p {
+        font-size: 12px;
+    }
+
+    .seller-card img {
+        height: 145px;
+    }
+
+    .seller-card h3 {
+        font-size: 10px;
+    }
+
+    .seller-card p {
+        font-size: 10px;
+    }
+
+    .testimonial-container {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .testimonial-card {
+        padding: 20px;
+        border-radius: 30px 5px 30px 5px;
+    }
+
+    .testimonial-card > p {
+        font-size: 11px;
+    }
+
+    .why-image {
+        padding: 8px;
+    }
+
+    .why-image img {
+        height: 280px;
+    }
+
+    .gallery-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: repeat(3, 80px);
+        gap: 5px;
+    }
+
+    .newsletter {
+        padding: 35px 4%;
+    }
+
+    .newsletter h2 {
+        font-size: 20px;
+    }
+
+    .newsletter p {
+        font-size: 11px;
+    }
+
+    .newsletter input {
+        padding: 11px 8px;
+        font-size: 11px;
+    }
+
+    .newsletter button {
+        padding: 0 10px;
+        font-size: 10px;
+    }
+
+    footer {
+        padding: 30px 4% 15px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 15px;
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+
+    .footer-links h3 {
+        font-size: 11px;
+    }
+
+    .footer-links > a,
+    .footer-links p {
+        font-size: 10px;
+    }
+
+    .copyright {
+        font-size: 10px;
+    }
+}
+  </style>
+
+<header>
+    <div class="top-header">
+        <h2 class="logo">Chilson</h2>
+
+        <div class="search">
+            <input type="text" placeholder="Search here...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+
+        <div class="header-icons">
+            <i class="fas fa-user"></i>
+            <i class="fas fa-shopping-cart"></i>
+            <i class="fas fa-phone"></i>
+            <span>+234 800 000 0000</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">HOME</a>
+        <a href="#products">PRODUCTS</a>
+        <a href="#about">ABOUT US</a>
+        <a href="#bestseller">BEST SELLER</a>
+        <a href="#why">WHY CHOOSE US</a>
+        <a href="#testimonials">TESTIMONIALS</a>
+        <a href="#gallery">GALLERY</a>
+        <a href="#contact">CONTACT</a>
+    </nav>
+</header>
+
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1>WELCOME TO<br>CHILSO JEWELERS</h1>
+        <p>Discover timeless elegance with our beautiful collection of jewellery. Find the perfect piece to express your style and make every moment special.</p>
+        <a href="#products" class="btn">SHOP NOW</a>
+    </div>
+
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=900&q=80" alt="Jewelry model">
+    </div>
+</section>
+
+<section class="products section" id="products">
+    <h2>OUR PRODUCT</h2>
+
+    <div class="product-container">
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=500&q=80" alt="Gold chain">
+            <h3>GOLD CHAIN</h3>
+            <p>Elegant jewellery designed to complement your beauty.</p>
+            <a href="#contact" class="btn">SHOP NOW</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=500&q=80" alt="Diamond ring">
+            <h3>DIAMOND RING</h3>
+            <p>Beautiful rings for your most memorable moments.</p>
+            <a href="#contact" class="btn">SHOP NOW</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=500&q=80" alt="Pendant necklace">
+            <h3>PENDANTS GOLD</h3>
+            <p>Unique pendants made for a timeless appearance.</p>
+            <a href="#contact" class="btn">SHOP NOW</a>
+        </div>
+
+        <div class="product-card">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=80" alt="Earrings">
+            <h3>EARRINGS</h3>
+            <p>Stylish earrings for every occasion.</p>
+            <a href="#contact" class="btn">SHOP NOW</a>
+        </div>
+    </div>
+</section>
+
+<section class="about section" id="about">
+    <div class="about-images">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=700&q=80" alt="Jewelry collection">
+        <img class="small-image" src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=400&q=80" alt="Ring">
+    </div>
+
+    <div class="about-content">
+        <h2>ABOUT CHILSO JEWELERS</h2>
+        <p>Welcome to Chilso Jewelers, where beauty meets elegance. We offer a carefully selected collection of jewellery designed to bring out your unique style.</p>
+        <p>From stunning necklaces to beautiful rings, earrings and pendants, our products are selected with quality, beauty and customer satisfaction in mind.</p>
+        <p>We believe that every piece of jewellery tells a story. Let us help you create beautiful memories with jewellery you will cherish for years to come.</p>
+        <a href="#contact" class="btn">READ MORE</a>
+    </div>
+</section>
+
+<section class="bestseller section" id="bestseller">
+    <h2>BEST SELLER</h2>
+
+    <div class="seller-container">
+        <div class="seller-card">
+            <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=400&q=80" alt="Gold necklace">
+            <h3>GOLDEN NECKLACE</h3>
+            <p>Beautiful and elegant design.</p>
+            <strong>₦25,000</strong>
+        </div>
+
+        <div class="seller-card">
+            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=400&q=80" alt="Fashion earrings">
+            <h3>CLASSIC EARRINGS</h3>
+            <p>Perfect for special occasions.</p>
+            <strong>₦15,000</strong>
+        </div>
+
+        <div class="seller-card">
+            <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=400&q=80" alt="Gold jewellery">
+            <h3>GOLDEN PENDANT</h3>
+            <p>A stylish everyday accessory.</p>
+            <strong>₦18,000</strong>
+        </div>
+
+        <div class="seller-card">
+            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=400&q=80" alt="Elegant earrings">
+            <h3>DIAMOND EARRINGS</h3>
+            <p>Elegant and timeless jewellery.</p>
+            <strong>₦20,000</strong>
+        </div>
+    </div>
+</section>
+
+<section class="why section" id="why">
+    <div class="why-content">
+        <h2>WHY CHOOSE US</h2>
+        <p>At Chilso Jewelers, we believe that jewellery should be beautiful, unique and meaningful. Our collection is carefully selected to give you elegant designs for every occasion.</p>
+        <p>We are committed to offering excellent customer service, attractive designs and a pleasant shopping experience. Whether you are buying a gift or treating yourself, we have something special for you.</p>
+        <p>Choose Chilso Jewelers and let your style shine with confidence.</p>
+        <a href="#contact" class="btn">LEARN MORE</a>
+    </div>
+
+    <div class="why-image">
+        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=700&q=80" alt="Elegant necklace">
+    </div>
+</section>
+
+<section class="testimonials section" id="testimonials">
+    <h2>OUR CLIENTS TESTIMONIAL</h2>
+
+    <div class="testimonial-container">
+        <div class="testimonial-card">
+            <div class="client">
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=150&q=80" alt="Customer">
+                <div>
+                    <h3>GRACE EMMANUEL</h3>
+                    <span>★★★★★</span>
+                </div>
+            </div>
+            <p>I absolutely love the jewellery I purchased from Chilso Jewelers. The design was beautiful, the quality was impressive and the entire shopping experience was wonderful. I will definitely shop here again.</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="client">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Customer">
+                <div>
+                    <h3>BLESSING SAMUEL</h3>
+                    <span>★★★★★</span>
+                </div>
+            </div>
+            <p>Chilso Jewelers has amazing jewellery collections. I found exactly what I wanted, and the product looked even more beautiful in person. Their customer service was excellent. I highly recommend them.</p>
+        </div>
+    </div>
+</section>
+
+<section class="gallery section" id="gallery">
+    <h2>GALLERY</h2>
+
+    <div class="gallery-container">
+        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80" alt="Jewelry model">
+        <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=500&q=80" alt="Fashion model">
+        <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638?auto=format&fit=crop&w=500&q=80" alt="Earrings">
+        <img src="https://images.unsplash.com/photo-1512316609839-ce289d3eba0a?auto=format&fit=crop&w=500&q=80" alt="Elegant jewellery">
+        <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=500&q=80" alt="Jewelry accessories">
+        <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?auto=format&fit=crop&w=500&q=80" alt="Fashion portrait">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=500&q=80" alt="Necklace collection">
+        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=500&q=80" alt="Fashion jewellery">
+    </div>
+</section>
+
+<section class="newsletter">
+    <div>
+        <h2>JOIN US OUR NEWSLETTER</h2>
+        <p>Subscribe to receive updates about our latest collections, special offers and exclusive jewellery designs.</p>
+
+        <form>
+            <input type="email" placeholder="Enter your email address" required>
+            <button type="submit">SUBSCRIBE</button>
+        </form>
+    </div>
+</section>
+
+<footer id="contact">
+    <div class="footer-container">
+        <div class="footer-brand">
+            <h2>Chilson</h2>
+            <p>Jewellery that expresses your beauty, elegance and unique style.</p>
+            <div class="socials">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <h3>QUICK LINK</h3>
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#about">About Us</a>
+            <a href="#bestseller">Best Seller</a>
+            <a href="#gallery">Gallery</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>IMPORTANT</h3>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Shipping Policy</a>
+            <a href="#">Return Policy</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>MY ACCOUNT</h3>
+            <a href="#">My Account</a>
+            <a href="#">My Orders</a>
+            <a href="#">Wishlist</a>
+            <a href="#">Shopping Cart</a>
+        </div>
+
+        <div class="footer-links">
+            <h3>CONTACT US</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Calabar, Nigeria</p>
+            <p><i class="fas fa-phone"></i> +234 800 000 0000</p>
+            <p><i class="fas fa-envelope"></i> info@chilso.com</p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p>© 2026 Chilso Jewelers. All Rights Reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>
